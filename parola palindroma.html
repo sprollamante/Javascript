@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<body>
+        <h2>Roulette russa</h2>
+        <p>Proiettili inseriti </p>
+        <p id="nproiettili"></p>
+        <br>
+        
+        <script>
+        let nproiettili, i = 0, caricatore = [0,0,0,0,0,0,0], tentativo;
+        
+        nproiettili = parseInt(prompt("Quanti proiettili vuoi inserire? (max 5)"," "));
+        for(i = 0; i < nproiettili; i++){
+          let posizione = Math.floor(Math.random() * 7);
+            if(caricatore[posizione] == 0)
+                caricatore[posizione] = 1;
+
+        tentativo = caricatore[Math.floor(Math.random() * 7)];
+        if(tentativo == 0){
+        document.write("Sei sopravvissuto!");
+        }
+        if(tentativo  == 1){
+        document.write("Sei morto!");
+        }
+        document.getElementById("nproiettili").innerHTML = nproiettili;
+
+                
+        </script>
+       	</body>
+</ht

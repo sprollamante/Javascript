@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+    <h1>Aula interattiva</h1>
+    <input type="text" id="colonna" name="colonna" placeholder="Inserisci colonna">
+    <input type="text" id="riga" name="riga" placeholder="Inserisci riga">
+    <button id="crea">crea</button>
+    
+        <script>
+            document.getElementById("crea").addEventListener("click", function () {
+
+                    let colonnaValue = parseInt(document.getElementById("colonna").value);
+                let rigaValue = parseInt(document.getElementById("riga").value);
+                for (i = 0; i < colonnaValue; i++) {
+                    const br = document.createElement('br');
+                    document.body.appendChild(br);
+                    for (j = 0; j < rigaValue; j++) {
+                        const immagine = document.createElement('img');
+                        immagine.src = "computer-off.png";
+                        immagine.width =150;
+                        immagine.height = 150;
+                        document.body.appendChild(immagine);
+                        immagine.addEventListener("click", function() {
+                        if (immagine.src.endsWith("computer-off.png")) {
+                            immagine.src = "computer-on.png";
+                        } else {
+                            immagine.src = "computer-off.png";
+                        }
+                    });
+                    }
+
+                }
+            })
+
+        </script>
+</body>
+
+</html>
